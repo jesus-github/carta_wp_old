@@ -1,8 +1,11 @@
 
  /*Adapta la imagen para cubrir todo el contenedor sin deformarse */
-.rellenar{
+ .rellenar{
     height: 100%;
     width: 100%;
     object-fit:cover;
     -o-object-fit:cover;
 }
+ .alergenos img {
+     height: 46px;
+ }
