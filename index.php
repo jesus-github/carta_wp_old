@@ -61,6 +61,7 @@
                                 <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
                                 <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
                                 <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
