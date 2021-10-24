@@ -43,57 +43,31 @@
         </nav>
     </div>
     <!-- Grid Masonry con los platos de la carta. -->
-    <div class="row row-cols-1 row-cols-lg-2 g-2 mt-3" data-masonry='{"percentPosition": true }'>
-
-        <div class="card mb-3 shadow-sm">
+    <div class="row row-cols-1 row-cols-lg-2 mt-3 g-2" data-masonry="{percentPosition: true }">
+        <div class="col">
+            <div class="card shadow-sm p-0">
                 <div class="row g-0">
-                    <div class="col-4 overflow-hidden">
-                        <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start rellenar" alt="...">
+                    <div class="col-4">
+                        <a href="img/platos/Barbarrosa%20(2)_1620x1080.jpg" target="_self">
+                            <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start rellenar" alt="...">
+                        </a>
                     </div>
                     <div class="col-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        <div class="card mb-3 shadow-sm">
-            <div class="row g-0">
-                <div class="col-4 overflow-hidden">
-                    <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start rellenar" alt="...">
-                </div>
-                <div class="col-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="card mb-3 shadow-sm">
-            <div class="row g-0">
-                <div class="col-4 overflow-hidden">
-                    <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start rellenar" alt="...">
-                </div>
-                <div class="col-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
     </div>
-</div>
 
 <!-- JQuery -->
 <script src="helpers/jquery/jquery-3.6.0.min.js"></script>
