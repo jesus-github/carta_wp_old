@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="container">
+    <!-- Menú con la categorías de la carta para poder filtrar -->
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -21,36 +22,28 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li data-filter="filtro" class="nav-item btn btn-info activo">
-                            <a class="nav-link active" aria-current="page" href="#">Categoría 1</a>
-                        </li>
-                        <li data-filter="filtro" class="nav-item btn btn-info">
-                            <a class="nav-link" href="#">Categoría 2</a>
-                        </li>
-                        <li data-filter="filtro" class="nav-item btn btn-info">
-                            <a class="nav-link" href="#">Categoría 3</a>
-                        </li>
-                        <li data-filter="filtro" class="nav-item btn btn-info">
-                            <a class="nav-link" href="#">Categoría 4</a>
-                        </li>
-                        <li data-filter="filtro" class="nav-item btn btn-info">
-                            <a class="nav-link" href="#">Categoría 5</a>
-                        </li>
+                    <!-- Añadimos la clase cwp-categorias-->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 cwp-categorias">
+                        <!-- A cada item le añadimos el atributo data-filter="" y la clase activo al que queramos que esté activo. Y le aplicamos el role="button" -->
+                        <li data-filter="sugerencias" class="nav-item p-2 m-2 cwp-categoria-activa" role="button">Sugerencias</li>
+                        <li data-filter="tapas" class="nav-item p-2 m-2" role="button">Tapas</li>
+                        <li data-filter="raciones" class="nav-item p-2 m-2"" role="button">Raciones</li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <!-- Grid Masonry con los platos de la carta. -->
+
+    <!-- Grid Masonry con los platos de la carta. Va a contener todos los items de la carta. Tendrá la clase cwp-container-->
     <div class="row row-cols-1 row-cols-lg-2 mt-3 g-2" data-masonry="{percentPosition: true }">
-        <div class="col">
+        <!-- Cada elemento de la carta tendrá la clase cwp-item y el atributo para filtrar data-filter="" con el valor por el que queramos filtrar-->
+        <div class="col cwp-item" role="button" data-f="sugerencias">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
                 <div class="row g-0">
                     <div class="col-4">
-                        <a href="img/platos/Barbarrosa%20(2)_1620x1080.jpg" target="_self">
-                            <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start rellenar" alt="...">
-                        </a>
+                        <img src="img/platos/Barbarrosa%20(2)_1620x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
                     </div>
                     <div class="col-8">
                         <div class="card-body">
@@ -68,6 +61,128 @@
                 </div>
             </div>
         </div>
+        <div class="col cwp-item" role="button" data-f="sugerencias">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
+            <div class="card shadow-sm p-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="img/platos/Barbarossa%2006%2012%20(4)_1398x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col cwp-item" role="button" data-f="tapas">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
+            <div class="card shadow-sm p-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="img/platos/Barbarrosa%20(3)_1462x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col cwp-item" role="button" data-f="tapas">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
+            <div class="card shadow-sm p-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="img/platos/Barbarrosa%20(5)_1620x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col cwp-item" role="button" data-f="raciones">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
+            <div class="card shadow-sm p-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="img/platos/Barbarrosa%20(11)_835x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col cwp-item" role="button" data-f="raciones">
+            <!-- Añadimos una máscara encima de cada contenedor de plato -->
+            <div class="cwp-mask"></div>
+            <div class="card shadow-sm p-0">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="img/platos/Barbarrosa%20(18)_835x1080.jpg" class="img-fluid rounded-start cwp-fill" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h6 class="card-title">Orejas de pollo al ajillo</h6>
+                            <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
+                            <h6 class="card-text">18,50 €</h6>
+                            <ul class="list-inline m-0 alergenos">
+                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 <!-- JQuery -->

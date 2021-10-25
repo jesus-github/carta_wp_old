@@ -1,8 +1,45 @@
 
  /*Adapta la imagen para cubrir todo el contenedor sin deformarse */
-.rellenar{
+.cwp-fill{
     height: 100%;
     width: 100%;
     object-fit:cover;
     -o-object-fit:cover;
 }
+
+ .alergenos img {
+     height: 42px;
+ }
+
+ ul.cwp-categorias li {
+     transition: .2s all;
+     color: #000000;
+     border: 1px solid #000000;
+
+ }
+
+ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
+     background-color: #000000;
+     color: #ffffff;
+ }
+
+.cwp-item {
+    position: relative;
+}
+
+ .cwp-mask {
+     position: absolute;
+     right: 1%;
+     left: 1%;
+     width: 98%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.0);
+     border-top: 4px solid #000000;
+     z-index: 20;
+     opacity: 0;
+     transition: .3s all;
+ }
+
+ .cwp-mask:hover {
+     opacity: 1;
+ }
