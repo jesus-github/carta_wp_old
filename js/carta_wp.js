@@ -19,7 +19,7 @@ if (typeof  jQuery == 'undefined') {
     // Valores por defecto
     TJ_CartaWp.Defaults = {
         filter : '.cwp-categorias li', // selector de los filtros
-        item : '.cwp-item', // selector  los item a filtrar
+        item : '.cwp-item', // selector  los item a filtrar (clase que tendrá el contenedor de cada plato)
         animation : 'scale',
         callback : null
     }
@@ -28,6 +28,10 @@ if (typeof  jQuery == 'undefined') {
     TJ_CartaWp.prototype.init = function (element, options, callback) {
         this.$element = $(element);
         this.options = this.getOptions(options);
+        console.log('---------------------');
+        console.log(this.$element);
+        // Aplicamos la clase cwp-item a cada contenedor de plato
+        this.$element.children().addClass(this.options.item.replace('.',''));
 
         // Validamos los métodos callback
         if (typeof callback == 'function'){
@@ -39,25 +43,22 @@ if (typeof  jQuery == 'undefined') {
     }
 
     // Método que nos va a devolver los valores de las propiedades por defecto
-    TJ_CartaWp.prototype.getDefaultOptions = function () {
+    TJ_CartaWp.prototype.getDefaults = function () {
         return TJ_CartaWp.Defaults;
     }
 
     // Método que nos va a devolver los valores de las opciones introducidas por el usuario
     TJ_CartaWp.prototype.getOptions = function (options){
         // devolvemos la fusión de las opciones por Default con las opciones pasada por el usuario
-        return $.extend({}, this.getDefaultOptions(), options);
+        return $.extend({}, this.getDefaults(), options);
     }
 
     // Método para filtrar
     TJ_CartaWp.prototype.filtro = function (options) {
         $(document).on('click', options.filter, function (){
             var $this   = $(this), // Elemento sobre el que hacemos click
-                filtro  = $this.attr('data-filter'), // Captura el valor del atributo data-filter
+                filtro  = $this.attr('data-filter'), // Captura el valor del atributo data-filter del elemento que clicamos
                 $item   = $(options.item) // Recuperamos todas los platos
-
-
-
         });
     }
 
@@ -69,8 +70,8 @@ if (typeof  jQuery == 'undefined') {
     */
     var Plugin = function (options, callback) {
         return this.each(function () {
-            var options = typeof options == 'options' && options,
-            data        = new TJ_CartaWp( this, options, callback);
+            options = typeof options == 'object' && options;
+            var data = new TJ_CartaWp( this, options, callback);
         });
     }
 
@@ -85,7 +86,9 @@ if (typeof  jQuery == 'undefined') {
         $.fn.cwp = old;
     }
 
-    $('.container').cwp({}, function (){
+    // Iniciamos el plugin de filtrado, si no le pasamos valores cogerá los por defecto.
+    // Indicamos el contedor donde se encuentra el contenido a filtrar
+    $('.cwp-container').cwp({}, function (){
         console.log('todo correcto')
     });
 

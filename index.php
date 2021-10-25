@@ -35,9 +35,9 @@
     </div>
 
     <!-- Grid Masonry con los platos de la carta. Va a contener todos los items de la carta. Tendrá la clase cwp-container-->
-    <div class="row row-cols-1 row-cols-lg-2 mt-3 g-2" data-masonry="{percentPosition: true }">
+    <div class="row row-cols-1 row-cols-lg-2 mt-3 g-2 cwp-container" data-masonry="{percentPosition: true }">
         <!-- Cada elemento de la carta tendrá la clase cwp-item y el atributo para filtrar data-filter="" con el valor por el que queramos filtrar-->
-        <div class="col cwp-item" role="button" data-f="sugerencias">
+        <div class="col" role="button" data-f="sugerencias">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="col cwp-item" role="button" data-f="sugerencias">
+        <div class="col" role="button" data-f="sugerencias">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="col cwp-item" role="button" data-f="tapas">
+        <div class="col" role="button" data-f="tapas">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="col cwp-item" role="button" data-f="tapas">
+        <div class="col" role="button" data-f="tapas">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="col cwp-item" role="button" data-f="raciones">
+        <div class="col" role="button" data-f="raciones">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="col cwp-item" role="button" data-f="raciones">
+        <div class="col" role="button" data-f="raciones">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
