@@ -25,7 +25,8 @@
                     <!-- Añadimos la clase cwp-categorias-->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 cwp-categorias">
                         <!-- A cada item le añadimos el atributo data-filter="" y la clase activo al que queramos que esté activo. Y le aplicamos el role="button" -->
-                        <li data-filter="sugerencias" class="nav-item p-2 m-2 cwp-categoria-activa" role="button">Sugerencias</li>
+                        <li data-filter="todo" class="nav-item p-2 m-2 " role="button">Todo</li>
+                        <li data-filter="sugerencias" class="nav-item p-2 m-2 " role="button">Sugerencias</li>
                         <li data-filter="tapas" class="nav-item p-2 m-2" role="button">Tapas</li>
                         <li data-filter="raciones" class="nav-item p-2 m-2"" role="button">Raciones</li>
                     </ul>
@@ -85,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="col" role="button" data-f="tapas">
+        <div class="col" role="button" data-f="tapas sugerencias">
             <!-- Añadimos una máscara encima de cada contenedor de plato -->
             <div class="cwp-mask"></div>
             <div class="card shadow-sm p-0">
