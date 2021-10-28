@@ -10,8 +10,25 @@ if (typeof  jQuery == 'undefined') {
 
     // Creamos un objeto (nombramos la variable empezando con mayúsculas) cuyo valor va a ser igual a una función
     var TJ_CartaWp = function (element, options, callback) {
-        this.element = null;
-        this.options = null;
+        this.element    = null;
+        this.options    = null;
+        this.zoomfull       = '<!--  INICIO - Maquetación al pinchar sobre un item -->\n' +
+                            '<div class="card shadow-lg" id="cwp-zoom">\n' +
+                            '    <img src="" class="card-img-top cwp-main-image" alt="...">\n' +
+                            '    <div class="card-body">\n' +
+                            '        <h6 class="card-title cwp-title">Orejas de pollo al ajillo</h6>\n' +
+                            '        <p class="card-text text-secondary m-1 cwp-description">Acompañadas de patatas caseras y pimientos.</p>\n' +
+                            '        <h6 class="card-text cwp-price">18,50 €</h6>\n' +
+                            '        <ul class="list-inline m-0 cwp-alergenos">\n' +
+                            '            <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>\n' +
+                            '            <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>\n' +
+                            '            <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>\n' +
+                            '            <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>\n' +
+                            '        </ul>\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<!--  FIN - Maquetación al pinchar sobre un item -->';
+        this.overdark   =   '<div class="cwp-fondo-zoom"></div>'; // Máscara negra al hace zoom
 
         this.init(element, options, callback);
         };
@@ -28,8 +45,22 @@ if (typeof  jQuery == 'undefined') {
     TJ_CartaWp.prototype.init = function (element, options, callback) {
         this.$element = $(element);
         this.options = this.getOptions(options);
+
+        //Le aplicamos masonry al contenedor de todos los platos
+        $('.cwp-container').masonry({
+            //itemSelector: '.cwp-single-container',
+            percentPosition: true,
+        });
+
         // Llamamos al método filtro pasándole las options
         this.filtro(this.options);
+
+        // Añadimos el html de la máscara y el zoom al final de body (las hemos declarado como propiedades al crear el objeto TJ_CartaWp)
+        $('body').prepend(this.zoomfull);
+        $('body').prepend(this.overdark);
+
+        // Inicializamos el métido para hacer zoom
+        this.zoom();
 
         // Aplicamos la clase cwp-item a cada contenedor de plato
         this.$element.children().addClass(this.options.item.replace('.',''));
@@ -69,8 +100,12 @@ if (typeof  jQuery == 'undefined') {
             if (filtro == 'todo') {
                 // Le añadimos la clase cwp-categoria-activa y a todos los hermanos le quitamos la clase cwp-categoria-activa
                 $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
+                //$('.cwp-container').masonry('reloadItems');
                 // Muestra todas la imágenes
-                $item.show(1000);
+                $item.show();
+                // Redibujamos la cuadrícula para que se ordene
+                $('.cwp-container').masonry();
+
             } else {
                 // Si el elemento que pulsamos no tiene la clase cwp-categoria-activa vamos a agrgársela y quitársela a los hermanos
                 if (!$this.hasClass('cwp-categoria-activa')) {
@@ -82,11 +117,48 @@ if (typeof  jQuery == 'undefined') {
                         // Mostramos  solo los items que tengan como valor del atributo data-f el valor de filtro (data-filter del botón en este caso)
                         // Utilizamos *= para indicar que data-f tiene que contener el valor de filtro, por si hay más de un filtro aplicado
                         $('[data-f *= "'+filtro+'"]').fadeIn(300);
+                        // Redibujamos la cuadrícula para que se ordene
+                        $('.cwp-container').masonry();
                     },600);
                 }
             }
-
         });
+    }
+
+    // Método para hacer Zoom al pinchar sobre un plato
+    TJ_CartaWp.prototype.zoom = function () {
+        // variable con la máscara negra
+        var $overdark = $('.cwp-fondo-zoom');
+        // variable con el contenedor que va a contener todo cuando hagamos zoom
+        var $contenedor_zoom = $('#cwp-zoom');
+        // Variables con los datos para pasarlos del contenedor pequeño al contenedor grande (cuando hacemos zoom
+        var $imagen_pricipal = $('.cwp-main-image');
+        // Evento para cuando hagamos click sobre el contenedor cwp-single-container
+        $(document).on('click','.cwp-single-container', function (){
+            // Almacenamos en una variable el elemento sobre el cual estamos haciendo click
+            var $contenedor_pequeno = $(this);
+            // Variables para almacenar los datos del contenedor pequeño:
+            // Variable con la url de la imagen principal.
+            var src = $contenedor_pequeno.find('.cwp-main-image').attr('src');
+            console.log(src);
+            // Título
+            var $titulo = $contenedor_pequeno.find('.card-title').text()
+            console.log($titulo);
+            // Parámetro para mostrar el zoom y el overdark
+            $contenedor_zoom.fadeIn();
+            $overdark.fadeIn();
+            // Pasamos los valores del contenedor chico al grande
+            $contenedor_zoom.children('cwp-main-image').attr('src', src);
+            console.log($contenedor_zoom.children('.cwp-main-image').attr('src', src));
+        });
+
+        // Tras aparecer el overdark y el contenedor zoom vamos a ocultarlos cuando hagamos click sobre cualquiera de ellos
+        $.merge($overdark,$contenedor_zoom).on('click', function (){
+            $overdark.fadeOut();
+            $contenedor_zoom.fadeOut();
+        })
+
+
     }
 
     // Extendemos el objeto jQuery creando la funciionalidad
