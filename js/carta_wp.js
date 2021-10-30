@@ -46,12 +46,6 @@ if (typeof  jQuery == 'undefined') {
         this.$element = $(element);
         this.options = this.getOptions(options);
 
-        //Le aplicamos masonry al contenedor de todos los platos
-        $('.cwp-container').masonry({
-            //itemSelector: '.cwp-single-container',
-            percentPosition: true,
-        });
-
         // Llamamos al método filtro pasándole las options
         this.filtro(this.options);
 
@@ -100,28 +94,25 @@ if (typeof  jQuery == 'undefined') {
             if (filtro == 'todo') {
                 // Le añadimos la clase cwp-categoria-activa y a todos los hermanos le quitamos la clase cwp-categoria-activa
                 $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
-                //$('.cwp-container').masonry('reloadItems');
                 // Muestra todas la imágenes
                 $item.show();
-                // Redibujamos la cuadrícula para que se ordene
-                $('.cwp-container').masonry();
-
             } else {
                 // Si el elemento que pulsamos no tiene la clase cwp-categoria-activa vamos a agrgársela y quitársela a los hermanos
                 if (!$this.hasClass('cwp-categoria-activa')) {
                     $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
                     // Ocultamos todos los items
-                    $item.fadeOut(300);
+                    $item.hide();
                     // Ejecutamos la acción pasados unos milisegundos
                     setTimeout(function (){
                         // Mostramos  solo los items que tengan como valor del atributo data-f el valor de filtro (data-filter del botón en este caso)
                         // Utilizamos *= para indicar que data-f tiene que contener el valor de filtro, por si hay más de un filtro aplicado
-                        $('[data-f *= "'+filtro+'"]').fadeIn(300);
+                        $('[data-f *= "'+filtro+'"]').show();
                         // Redibujamos la cuadrícula para que se ordene
-                        $('.cwp-container').masonry();
+                        $
                     },600);
                 }
             }
+
         });
     }
 
