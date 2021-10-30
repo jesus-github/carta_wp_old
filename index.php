@@ -7,7 +7,7 @@
 
 	<!-- Bootstrap CSS -->
 	<link href="helpers/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/carta_wp.css">
+    <link rel="stylesheet" href="helpers/filtro_cwp/css/filtro_cwp.min.css">
 
 	<title>carta_wp</title>
 </head>
@@ -407,8 +407,10 @@
     <script src="helpers/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Masonry Grid -->
     <script src="helpers/masonry/masonry.pkgd.min.js"></script>
-    <!-- Funciones personalizadas -->
-    <script src="js/carta_wp.js"></script>
+    <!-- Funciones del plugin de jQuery filtro_cwp -->
+    <script src="helpers/filtro_cwp/js/filtro_cwp.min.js"></script>
+    <!-- Funciones del plugin -->
+    <script src="js/functions.min.js"></script>
 
 </body>
 </html>

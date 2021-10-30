@@ -8,29 +8,29 @@ if (typeof  jQuery == 'undefined') {
     'use strict';
     /********** Funcionalidad de filtrado *********/
 
-    // Creamos un objeto (nombramos la variable empezando con mayúsculas) cuyo valor va a ser igual a una función
+        // Creamos un objeto (nombramos la variable empezando con mayúsculas) cuyo valor va a ser igual a una función
     var TJ_CartaWp = function (element, options, callback) {
-        this.element    = null;
-        this.options    = null;
-        this.zoomfull       = '<!--  INICIO - Maquetación al pinchar sobre un item -->\n' +
-                            '<div class="card shadow-lg" id="cwp-zoom">\n' +
-                            '    <img src="" class="card-img-top cwp-main-image" alt="...">\n' +
-                            '    <div class="card-body">\n' +
-                            '        <h6 class="card-title cwp-title">Orejas de pollo al ajillo</h6>\n' +
-                            '        <p class="card-text text-secondary m-1 cwp-description">Acompañadas de patatas caseras y pimientos.</p>\n' +
-                            '        <h6 class="card-text cwp-price">18,50 €</h6>\n' +
-                            '        <ul class="list-inline m-0 cwp-alergenos">\n' +
-                            '            <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>\n' +
-                            '            <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>\n' +
-                            '            <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>\n' +
-                            '            <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>\n' +
-                            '        </ul>\n' +
-                            '    </div>\n' +
-                            '</div>\n' +
-                            '<!--  FIN - Maquetación al pinchar sobre un item -->';
-        this.overdark   =   '<div class="cwp-fondo-zoom"></div>'; // Máscara negra al hace zoom
+            this.element    = null;
+            this.options    = null;
+            this.zoomfull       = '<!--  INICIO - Maquetación al pinchar sobre un item -->\n' +
+                '<div class="card shadow-lg cwp-zoom" id="">\n' +
+                '    <img src="" class="card-img-top cwp-main-image" alt="...">\n' +
+                '    <div class="card-body">\n' +
+                '        <h6 class="card-title cwp-title">Orejas de pollo al ajillo</h6>\n' +
+                '        <p class="card-text text-secondary m-1 cwp-description">Acompañadas de patatas caseras y pimientos.</p>\n' +
+                '        <h6 class="card-text cwp-price">18,50 €</h6>\n' +
+                '        <ul class="list-inline m-0 cwp-alergenos">\n' +
+                '            <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>\n' +
+                '            <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>\n' +
+                '            <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>\n' +
+                '            <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>\n' +
+                '        </ul>\n' +
+                '    </div>\n' +
+                '</div>\n' +
+                '<!--  FIN - Maquetación al pinchar sobre un item -->';
+            this.overdark   =   '<div class="cwp-fondo-zoom"></div>'; // Máscara negra al hace zoom
 
-        this.init(element, options, callback);
+            this.init(element, options, callback);
         };
 
     // Valores por defecto
@@ -121,7 +121,7 @@ if (typeof  jQuery == 'undefined') {
         // variable con la máscara negra
         var $overdark = $('.cwp-fondo-zoom');
         // variable con el contenedor que va a contener todo cuando hagamos zoom
-        var $contenedor_zoom = $('#cwp-zoom');
+        var $contenedor_zoom = $('.cwp-zoom');
         // Variables con los datos para pasarlos del contenedor pequeño al contenedor grande (cuando hacemos zoom
         var $imagen_pricipal = $('.cwp-main-image');
         // Evento para cuando hagamos click sobre el contenedor cwp-single-container
@@ -153,7 +153,7 @@ if (typeof  jQuery == 'undefined') {
     }
 
     // Extendemos el objeto jQuery creando la funciionalidad
-    /* $(element).cwp({}, function(){
+    /* $(element).filtro_cwp({}, function(){
         ...
         })
     */
@@ -165,21 +165,21 @@ if (typeof  jQuery == 'undefined') {
     }
 
     // para evitar conflictos con otros plugins
-    var old = $.fn.cwp;
+    var old = $.fn.filtro_cwp;
     //Método que vamos a usar en los elementos
-    $.fn.cwp = Plugin;
-    $.fn.cwp.Constructor = TJ_CartaWp;
+    $.fn.filtro_cwp = Plugin;
+    $.fn.filtro_cwp.Constructor = TJ_CartaWp;
 
     // Para evitar conflictos de nuestro plugin con otros plugins o frameworks con el símbolo $
-    $.fn.cwp.noConflict = function () {
-        $.fn.cwp = old;
+    $.fn.filtro_cwp.noConflict = function () {
+        $.fn.filtro_cwp = old;
     }
 
     // Iniciamos el plugin de filtrado, si no le pasamos valores cogerá los por defecto.
     // Indicamos el contedor donde se encuentra el contenido a filtrar
-    $('.cwp-container').cwp({}, function (){
-        console.log('todo correcto')
-    });
+    // $('.cwp-container').filtro_cwp({}, function (){
+    //     console.log('todo correcto')
+    // });
 
 })(jQuery);
 
