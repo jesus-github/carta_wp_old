@@ -20,12 +20,13 @@ add_action( 'add_meta_boxes', 'jmd_add_meta_box_platos' );
  */
 function meta_box_precio_plato_callback(){
     global $post;
-    // Extraemos el valor del meta-dato precio para mostrarlo en la meta-box mediante el atributo value del input
-    $_plato_precio = get_post_meta($post->ID,'_plato_precio', true);
+    /* Extraemos el valor del meta-dato precio para mostrarlo en la meta-box mediante el atributo value del input. Para
+    que si ya está introducido de antes nos aparezca en el input */
+    $plato_precio = get_post_meta($post->ID,'plato_precio', true);
 
     ?>
-		<label for="_plato_precio"><strong>Precio del plato</strong></label>
-		<input type="text" name="_plato_precio" id="plato-precio" class="postbox" value="<?php echo $_plato_precio?>">
+		<label for="plato_precio"><strong>Precio del plato</strong></label>
+		<input type="text" name="plato_precio" id="plato-precio" class="postbox" value="<?php echo $plato_precio?>">
 		<small>No introduzcas el símbolo €</small>
 	<?php
 }
@@ -35,8 +36,8 @@ function meta_box_precio_plato_callback(){
  *
  */
 function jmd_save_post_plato($post_id, $post, $update) {
-	if (isset($_POST['_plato_precio'])){
-        update_post_meta( $post_id, '_plato_precio', $_POST['_plato_precio']);
+	if (isset($_POST['plato_precio'])){
+        update_post_meta( $post_id, 'plato_precio', $_POST['plato_precio']);
 	}
 }
 // Ejecutamos la función 'jmd_save_post_plato' en el hook 'save_post'

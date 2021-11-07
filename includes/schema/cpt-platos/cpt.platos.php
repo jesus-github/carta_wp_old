@@ -3,8 +3,7 @@
  * Incluimos un Campo personalizado llamado 'precio' al CPT plato
  */
 include plugin_dir_path(__FILE__) . 'cf.platos.php';
-
-
+include plugin_dir_path(__FILE__) . 'taxonomies.platos.php';
 
 /**
  * Creamos un nuevo CPT Platos
@@ -47,7 +46,7 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 			'description'           => __( 'Platos que van a componer la carta', 'jmd_platos' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'editor', 'thumbnail'),
-			'taxonomies'            => array( 'seccion', ' alergeno' ),
+			'taxonomies'            => array( 'seccion', 'alergeno' ),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
