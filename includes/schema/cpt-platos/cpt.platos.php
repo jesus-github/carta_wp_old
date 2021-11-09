@@ -62,6 +62,8 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 			'capability_type'       => 'post',
 		);
 		register_post_type( 'platos', $args );
+		// Actualiza los enlaces permanentes
+		flush_rewrite_rules();
 
 	}
 	// Añadimos la función jmd_platos al hook de WP 'init' para que cargue el CPT platos al iniciar

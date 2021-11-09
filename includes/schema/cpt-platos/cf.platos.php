@@ -37,7 +37,9 @@ function meta_box_precio_plato_callback(){
  */
 function jmd_save_post_plato($post_id, $post, $update) {
 	if (isset($_POST['plato_precio'])){
-        update_post_meta( $post_id, 'plato_precio', $_POST['plato_precio']);
+        // Saneamos el precio introducido para evitar inyección de código php en el campo
+        $jmd_plato_precio = sanitize_text_field($_POST['plato_precio']);
+        update_post_meta( $post_id, 'plato_precio', $jmd_plato_precio);
 	}
 }
 // Ejecutamos la función 'jmd_save_post_plato' en el hook 'save_post'

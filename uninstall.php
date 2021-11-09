@@ -25,7 +25,7 @@
  * @package    Carta_wp
  */
 
-// If uninstall not called from WordPress, then exit.
+// If uninstall not called from WordPress, then exit. Para evitar el acceso directo.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }

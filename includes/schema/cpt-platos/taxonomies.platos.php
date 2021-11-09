@@ -122,7 +122,7 @@ jmd_hide_taxonomy_parent( 'seccion');
 class Jmd_add_alergeno_imagen{
 	private $meta_fields = array(
 		array(
-			'label' => 'icono',
+			'label' => 'Icono',
 			'id' => 'alergeno-imagen',
 			'type' => 'media',
 		)
