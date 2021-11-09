@@ -4,6 +4,7 @@
  */
 include plugin_dir_path(__FILE__) . 'cf.platos.php';
 include plugin_dir_path(__FILE__) . 'taxonomies.platos.php';
+include plugin_dir_path(__FILE__) . 'shortcode.platos.php';
 
 /**
  * Creamos un nuevo CPT Platos
