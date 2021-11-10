@@ -4,7 +4,9 @@
  */
 if ( ! function_exists( 'jmd_add_taxonomy_seccion' ) ) {
 
-// Register Custom Taxonomy
+/**
+ * Añadimos la taxonomía "secciones"
+ */
     function jmd_add_taxonomy_seccion() {
 
         $labels = array(

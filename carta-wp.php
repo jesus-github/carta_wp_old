@@ -107,7 +107,7 @@ register_deactivation_hook(__FILE__, 'jmd_deactivation');
 // Seteamos el hook de activación para el plugin
 register_uninstall_hook(__FILE__, 'jmd_desinstall');
 
-/* Encolamos archivos */
+/* Incluimos archivos */
 include plugin_dir_path(__FILE__) . 'includes/admin/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';

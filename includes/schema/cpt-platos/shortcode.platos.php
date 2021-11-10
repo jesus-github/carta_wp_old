@@ -7,9 +7,36 @@ function jmd_create_shortcode_platos_post_type(){
 
 	<!--COMIENZO de la maquetación del contenedor de la carta (categorías + platos)-->
 	<div class="container">
-		<!-- Comienzo de la maquetación del menú de selección -->
-		<!-- Query con las categorías-->
-		<!-- Comienzo de la maquetación del menú de selección -->
+		<!-- COMIENZO de la maquetación del menú de selección -->
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Secciones</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Añadimos la clase cwp-categorias-->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 cwp-categorias">
+	                        <?php
+	                        $taxonomy = 'seccion';
+	                        $taxonomy_terms = get_terms($taxonomy);
+                            //var_dump($taxonomy_terms);
+	                        foreach ($taxonomy_terms as $taxonomy_term) {
+		                        ?>
+                                <li data-filter="<?php echo $taxonomy_term->slug; ?>" class="nav-item p-2 m-2 "><?php echo $taxonomy_term->name; ?></li>
+                                <?php
+
+	                        }
+	                        ?>
+                            <!-- A cada item le añadimos el atributo data-filter="" y la clase activo al que queramos que esté activo. Y le aplicamos el role="button" -->
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+		<!-- FIN de la maquetación del menú de selección -->
 
 		<!-- Comienzo de la maquetación del contenedor con todos los platos -->
 		<div class="row row-cols-1 row-cols-lg-2 mt-3 g-2 cwp-container">
@@ -44,7 +71,7 @@ function jmd_create_shortcode_platos_post_type(){
 							<div class="col-8">
 								<div class="card-body">
 									<h3 class="card-title"><?php the_title();?></h3>
-									<p class="card-text text-secondary m-1"><?php the_content();?></p>
+									<p class="card-text text-secondary m-1"><?php echo wp_trim_words( get_the_content(), '10', '<strong> ...más</strong>' );;?></p>
 									<h6 class="card-text"><?php echo (get_post_meta(get_the_ID(),'plato_precio', true)); ?> €</h6>
 									<ul class="list-inline m-0 cwp-alergenos">
 										<?php
@@ -81,6 +108,7 @@ function jmd_create_shortcode_platos_post_type(){
         <!--FIN de la maquetación del contenedor de todos los platos -->
         </div>
 		<!--FIN de la maquetación del contenedor de la carta (categorías + platos)-->
+
 	</div>
 
 	<?php
