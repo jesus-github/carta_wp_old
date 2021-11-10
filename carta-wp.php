@@ -11,6 +11,66 @@
  * License: GPL2
  */
 
+$version_plugin = '1.0';
+
+// Cargamos los estilos del front-end
+if (!function_exists('jmd_enqueue_styles_front')) {
+	function jmd_enqueue_styles_front() {
+		// hoja de estilos front
+		wp_enqueue_style(
+			'public_styles',
+			plugins_url('public/css/carta_wp-public.min.css',__FILE__),
+			array(),
+			$version_plugin,
+			'all'
+		);
+		// hoja de estilos bootstrap
+		wp_enqueue_style(
+			'bootstrap_public_styles',
+			plugins_url('helpers/bootstrap/css/bootstrap.min.css',__FILE__),
+			array(),
+			$version_plugin,
+			'all'
+		);
+		// hoja de estilos del plugin de filtrar jQuery
+		wp_enqueue_style(
+			'filtro_cwp_public_styles',
+			plugins_url('helpers/filtro_cwp/css/filtro_cwp.min.css',__FILE__),
+			array(),
+			$version_plugin,
+			'all'
+		);
+
+		// scripts del front
+		wp_enqueue_script(
+			'public_scripts',
+			plugins_url('public/js/carta_wp-public.js',__FILE__),
+			array(),
+			$version_plugin,
+			true
+		);
+		// scripts de bootstrap
+		wp_enqueue_script(
+			'bootstrap_scripts',
+			plugins_url('helpers/bootstrap/js/bootstrap.bundle.min.js',__FILE__),
+			array(),
+			$version_plugin,
+			true
+		);
+		// scripts del plugin de filtrar jQuery
+		wp_enqueue_script(
+			'filtro_cwp_public_scripts',
+			plugins_url('helpers/filtro_cwp/js/filtro_cwp.min.js',__FILE__),
+			array( 'jquery' ), // Encolamos después de cargar jquery
+			$version_plugin,
+			true
+		);
+
+
+	}
+	add_action('wp_enqueue_scripts', 'jmd_enqueue_styles_front');
+}
+
 if (!function_exists('jmd_install')) {
 	function jmd_install() {
 		// Acciones a ejecutar cuando instalamos el plugin

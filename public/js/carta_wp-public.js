@@ -29,4 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	// Activamos el plugin de jQuery para el filtrado indicando al objeto del DOM que se lo vamos a aplicar
+	$('.cwp-container').filtro_cwp();
+
 })( jQuery );

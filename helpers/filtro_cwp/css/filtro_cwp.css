@@ -27,6 +27,10 @@ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
     position: relative;
 }
 
+.cwp-single-container {
+    position: relative;
+}
+
 .cwp-mask {
     position: absolute;
     right: 1%;
