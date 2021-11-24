@@ -174,7 +174,7 @@ if (typeof  jQuery == 'undefined') {
     // Añadimos leer más para no mostrar toda la descripción
     $(document).ready(function(){
         // Longitud visible
-        var maxLength = 50;
+        var maxLength = 30;
         // Se lo aplicamos a los textos con la clase .show-read-more
         $(".show-read-more").each(function(){
             // Cogemos el texto del elemento

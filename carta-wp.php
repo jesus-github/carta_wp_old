@@ -41,14 +41,14 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 			'all'
 		);
 
-		// scripts de bootstrap
-		wp_enqueue_script(
-			'bootstrap_scripts',
-			plugins_url('helpers/bootstrap/js/bootstrap.bundle.min.js',__FILE__),
-			array(),
-			$version_plugin,
-			true
-		);
+//		// scripts de bootstrap
+//		wp_enqueue_script(
+//			'bootstrap_scripts',
+//			plugins_url('helpers/bootstrap/js/bootstrap.bundle.min.js',__FILE__),
+//			array(),
+//			$version_plugin,
+//			true
+//		);
 		// scripts del plugin de filtrar jQuery
 		wp_enqueue_script(
 			'filtro_cwp_public_scripts',

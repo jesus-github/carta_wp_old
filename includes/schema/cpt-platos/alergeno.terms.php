@@ -79,7 +79,7 @@
 
 function jmd_insertar_alergenos($taxonomy, $object_type, $args){
 	if ( 'alergeno' == $taxonomy ) {
-		$alergenos = ['altramuces', 'apio', 'cacahuetes'];
+		$alergenos = ['altramuces', 'apio', 'cacahuetes', 'crustaceos', 'frutos_cascara','gluten','huevos','lacteos', 'moluscos','mostaza', 'pescado', 'sesamo', 'soja', 'sulfitos'];
 		//$url = plugin_dir_url( __FILE__ ) . 'alergenos/altramuces.png';
 		foreach ($alergenos as $alergeno) {
 			$url = plugin_dir_url( __FILE__ ) . 'alergenos/'.$alergeno.'.png';

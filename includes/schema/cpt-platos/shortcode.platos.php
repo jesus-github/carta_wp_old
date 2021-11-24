@@ -78,7 +78,7 @@ function jmd_create_shortcode_platos_post_type(){
 	                        </div>
 							<div class="col-8">
 								<div class="card-body">
-									<h3 class="card-title"><?php the_title();?></h3>
+									<h3 class="card-title h5"><?php the_title();?></h3>
 									<p class="card-text text-secondary m-1 cwp-description show-read-more"><?php echo get_the_content();?></p>
 									<h6 class="card-text cwp-price"><?php echo (get_post_meta(get_the_ID(),'plato_precio', true)); ?> €</h6>
 									<ul class="list-inline m-0 cwp-alergenos">
