@@ -16,14 +16,11 @@ if (typeof  jQuery == 'undefined') {
                 '<div class="card shadow-lg cwp-zoom" id="">\n' +
                 '    <img src="" class="card-img-top cwp-main-image" alt="...">\n' +
                 '    <div class="card-body">\n' +
-                '        <h6 class="card-title cwp-title">Orejas de pollo al ajillo</h6>\n' +
-                '        <p class="card-text text-secondary m-1 cwp-description">Acompañadas de patatas caseras y pimientos.</p>\n' +
-                '        <h6 class="card-text cwp-price">18,50 €</h6>\n' +
+                '        <h3 class="card-title cwp-title"></h3>\n' +
+                '        <p class="card-text text-secondary m-1 cwp-description"></p>\n' +
+                '        <h6 class="card-text cwp-price mt-3"></h6>\n' +
                 '        <ul class="list-inline m-0 cwp-alergenos">\n' +
-                '            <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>\n' +
-                '            <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>\n' +
-                '            <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>\n' +
-                '            <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>\n' +
+                // '            <li class="list-inline-item"><img src="" alt=""></li>\n' +
                 '        </ul>\n' +
                 '    </div>\n' +
                 '</div>\n' +
@@ -95,21 +92,21 @@ if (typeof  jQuery == 'undefined') {
                 // Le añadimos la clase cwp-categoria-activa y a todos los hermanos le quitamos la clase cwp-categoria-activa
                 $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
                 // Muestra todas la imágenes
-                $item.show();
+                $item.fadeIn(600);
             } else {
                 // Si el elemento que pulsamos no tiene la clase cwp-categoria-activa vamos a agrgársela y quitársela a los hermanos
                 if (!$this.hasClass('cwp-categoria-activa')) {
                     $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
                     // Ocultamos todos los items
-                    $item.hide();
+                    $item.fadeOut(300);
                     // Ejecutamos la acción pasados unos milisegundos
+                    //console.log('antes');
                     setTimeout(function (){
+                        console.log(filtro);
                         // Mostramos  solo los items que tengan como valor del atributo data-f el valor de filtro (data-filter del botón en este caso)
                         // Utilizamos *= para indicar que data-f tiene que contener el valor de filtro, por si hay más de un filtro aplicado
-                        $('[data-f *= "'+filtro+'"]').show();
-                        // Redibujamos la cuadrícula para que se ordene
-                        $
-                    },600);
+                        $('[data-f *= "'+filtro+'"]').fadeIn(300);
+                    },300);
                 }
             }
 
@@ -126,31 +123,76 @@ if (typeof  jQuery == 'undefined') {
         var $imagen_pricipal = $('.cwp-main-image');
         // Evento para cuando hagamos click sobre el contenedor cwp-single-container
         $(document).on('click','.cwp-single-container', function (){
+            //console.log($alergenos);
             // Almacenamos en una variable el elemento sobre el cual estamos haciendo click
             var $contenedor_pequeno = $(this);
             // Variables para almacenar los datos del contenedor pequeño:
             // Variable con la url de la imagen principal.
             var src = $contenedor_pequeno.find('.cwp-main-image').attr('src');
-            console.log(src);
             // Título
-            var $titulo = $contenedor_pequeno.find('.card-title').text()
-            console.log($titulo);
+            var $titulo = $contenedor_pequeno.find('.card-title').text();
+            // Descripcion. Vamos a distinguir si el contenedor tiene read-more o no para no mostrar lo que haya
+            // en el contenedor .read-more al hacer zoom
+            if ($contenedor_pequeno.find('.read-more').length != 0){
+                var $descripcion = $contenedor_pequeno.find('.show-string').text() + $contenedor_pequeno.find('.hide-string').text()
+            } else {
+                var $descripcion = $contenedor_pequeno.find('.cwp-description').text();
+            }
+
+
+            // Precio
+            var $precio = $contenedor_pequeno.find('.cwp-price').text();
+            // $alergenos
+            var $alergenos = $contenedor_pequeno.find('.cwp-alerg-icon');
+
             // Parámetro para mostrar el zoom y el overdark
             $contenedor_zoom.fadeIn();
             $overdark.fadeIn();
             // Pasamos los valores del contenedor chico al grande
-            $contenedor_zoom.children('cwp-main-image').attr('src', src);
-            console.log($contenedor_zoom.children('.cwp-main-image').attr('src', src));
+            $contenedor_zoom.children('.cwp-main-image').attr('src', src);
+            $contenedor_zoom.find('.card-title').text($titulo);
+            $contenedor_zoom.find('.cwp-description').text($descripcion);
+            $contenedor_zoom.find('.cwp-price').text($precio);
+            for (const $alergeno of $alergenos) {
+                $contenedor_zoom.find('ul.cwp-alergenos').append("<li class='list-inline-item'><img src="+$alergeno.currentSrc+ " alt='"+$alergeno.alt+"'></li>")
+            }
+
         });
 
         // Tras aparecer el overdark y el contenedor zoom vamos a ocultarlos cuando hagamos click sobre cualquiera de ellos
         $.merge($overdark,$contenedor_zoom).on('click', function (){
             $overdark.fadeOut();
             $contenedor_zoom.fadeOut();
+            // Borramos los alergenos del DOM para que no aparezcan en el siguiente click
+            $contenedor_zoom.find('ul.cwp-alergenos').html('');
+
         })
 
 
     }
+
+    // Añadimos leer más para no mostrar toda la descripción
+    $(document).ready(function(){
+        // Longitud visible
+        var maxLength = 50;
+        // Se lo aplicamos a los textos con la clase .show-read-more
+        $(".show-read-more").each(function(){
+            // Cogemos el texto del elemento
+            var myStr = $(this).text();
+            if($.trim(myStr).length > maxLength){
+                var newStr = myStr.substring(0, maxLength);
+                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                // Vacia el contenedor y muestra la cadena visible
+                $(this).empty().html("<span class='show-string'>"+newStr+"</span>");
+                // Añadimos ...más
+                $(this).append('<span class="read-more text-danger"> ...más</span>');
+                // Añadimos la parte restante y la ocultamos mediante la clase d-none (no la eliminamos para
+                // poder cogerla para mostrarla en el contenedor zoom)
+                $(this).append('<span class="d-none hide-string">' + removedStr + '</span>');
+            }
+        });
+    });
+
 
     // Extendemos el objeto jQuery creando la funciionalidad
     /* $(element).filtro_cwp({}, function(){

@@ -41,14 +41,6 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 			'all'
 		);
 
-		// scripts del front
-		wp_enqueue_script(
-			'public_scripts',
-			plugins_url('public/js/carta_wp-public.js',__FILE__),
-			array(),
-			$version_plugin,
-			true
-		);
 		// scripts de bootstrap
 		wp_enqueue_script(
 			'bootstrap_scripts',
@@ -65,6 +57,14 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 			$version_plugin,
 			true
 		);
+		// scripts del front
+		wp_enqueue_script(
+			'public_scripts',
+			plugins_url('public/js/carta_wp-public.js',__FILE__),
+			array(),
+			$version_plugin,
+			true
+		);
 
 
 	}
@@ -75,6 +75,7 @@ if (!function_exists('jmd_install')) {
 	function jmd_install() {
 		// Acciones a ejecutar cuando instalamos el plugin
 		//require_once 'Activador.php';
+
 	}
 }
 

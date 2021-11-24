@@ -18,6 +18,7 @@ function jmd_create_shortcode_platos_post_type(){
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Añadimos la clase cwp-categorias-->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 cwp-categorias">
+                            <li data-filter="todo" class="nav-item p-2 m-2 ">Todo</li>
 	                        <?php
 	                        $taxonomy = 'seccion';
 	                        $taxonomy_terms = get_terms($taxonomy);
@@ -26,7 +27,6 @@ function jmd_create_shortcode_platos_post_type(){
 		                        ?>
                                 <li data-filter="<?php echo $taxonomy_term->slug; ?>" class="nav-item p-2 m-2 "><?php echo $taxonomy_term->name; ?></li>
                                 <?php
-
 	                        }
 	                        ?>
                             <!-- A cada item le añadimos el atributo data-filter="" y la clase activo al que queramos que esté activo. Y le aplicamos el role="button" -->
@@ -60,8 +60,16 @@ function jmd_create_shortcode_platos_post_type(){
                 while ($query->have_posts()) :
                     $query->the_post();
 
-                    ?>
-            <div class="col cwp-single-container" role="button" data-f="tapas sugerencias">
+
+
+
+
+	                ?>
+            <div class="col cwp-single-container" role="button" data-f="<?php
+                                // Cogemos todos los términos de la taxonomía 'seccion' del post en el bucle
+                                $terms = get_the_terms( $post->ID, 'seccion' );
+                                // Para cada término
+                                foreach ( $terms as $term ) {echo strtolower("$term->name ");}?> ">
                 <div class="cwp-mask"></div>
                 <div class="card shadow-sm p-0">
                     <div class="row g-0">
@@ -71,8 +79,8 @@ function jmd_create_shortcode_platos_post_type(){
 							<div class="col-8">
 								<div class="card-body">
 									<h3 class="card-title"><?php the_title();?></h3>
-									<p class="card-text text-secondary m-1"><?php echo wp_trim_words( get_the_content(), '10', '<strong> ...más</strong>' );;?></p>
-									<h6 class="card-text"><?php echo (get_post_meta(get_the_ID(),'plato_precio', true)); ?> €</h6>
+									<p class="card-text text-secondary m-1 cwp-description show-read-more"><?php echo get_the_content();?></p>
+									<h6 class="card-text cwp-price"><?php echo (get_post_meta(get_the_ID(),'plato_precio', true)); ?> €</h6>
 									<ul class="list-inline m-0 cwp-alergenos">
 										<?php
                                         // Cogemos todos los términos de la taxonomía 'alergeno' del post en el bucle
@@ -83,7 +91,7 @@ function jmd_create_shortcode_platos_post_type(){
 											$termId= get_term_meta($term->term_id, 'alergeno-imagen',true);
                                             // Con el id del campo cogemos la src de la imagen
 											$iconImage = wp_get_attachment_image_src($termId,'large');
-                                            echo '<li class="list-inline-item"><img src="'.$iconImage[0].'" alt="' . $term->name . '"></li>';
+                                            echo '<li class="list-inline-item"><img class="cwp-alerg-icon" src="'.$iconImage[0].'" alt="' . $term->name . '"></li>';
                                         }
 										?>
 									</ul>

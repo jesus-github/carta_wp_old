@@ -51,10 +51,10 @@ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
 .cwp-zoom {
     position: fixed;
     z-index: 9999;
-    top: 35%;
-    left: 35%;
+    top: 45%;
+    left: 55%;
     display: flex;
-    transform: translate(-25%,-35%);
+    transform: translate(-55%,-45%);
 }
 
 .cwp-fondo-zoom {

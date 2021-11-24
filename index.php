@@ -53,10 +53,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -77,10 +77,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -101,10 +101,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -125,10 +125,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -149,10 +149,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -173,10 +173,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -197,10 +197,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -221,10 +221,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -245,10 +245,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -269,10 +269,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -293,10 +293,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -317,10 +317,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -341,10 +341,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -365,10 +365,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>
@@ -389,10 +389,10 @@
                             <p class="card-text text-secondary m-1">Acompañadas de patatas caseras y pimientos.</p>
                             <h6 class="card-text">18,50 €</h6>
                             <ul class="list-inline m-0 cwp-alergenos">
-                                <li class="list-inline-item"><img src="img/alergenos/altramuces.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/apio.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/pescado.png" alt=""></li>
-                                <li class="list-inline-item"><img src="img/alergenos/gluten.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/altramuces.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/apio.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/pescado.png" alt=""></li>
+                                <li class="list-inline-item"><img src="includes/schema/cpt-platos/alergenos/gluten.png" alt=""></li>
                             </ul>
                         </div>
                     </div>

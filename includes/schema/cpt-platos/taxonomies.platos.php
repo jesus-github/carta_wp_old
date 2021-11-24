@@ -41,8 +41,7 @@ if ( ! function_exists( 'jmd_add_taxonomy_seccion' ) ) {
             'show_tagcloud'              => true,
             "meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
         );
-        register_taxonomy( 'seccion', array( 'platos' ), $args );
-
+        register_taxonomy( 'seccion', 'platos', $args );
     }
     add_action( 'init', 'jmd_add_taxonomy_seccion', 0 );
 
@@ -89,7 +88,7 @@ if ( ! function_exists( 'jmd_add_taxonomy_alergeno' ) ) {
 			'show_tagcloud'              => true,
 			"meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
 		);
-		register_taxonomy( 'alergeno', array( 'platos' ), $args );
+		register_taxonomy( 'alergeno', 'platos', $args );
 
 	}
 	add_action( 'init', 'jmd_add_taxonomy_alergeno', 0 );
@@ -178,6 +177,7 @@ class Jmd_add_alergeno_imagen{
 	}
 
 	public function create_fields( $taxonomy ) {
+		$meta_value = null;
 		$output = '';
 		foreach ( $this->meta_fields as $meta_field ) {
 			$label = '<label for="' . $meta_field['id'] . '">' . $meta_field['label'] . '</label>';
@@ -284,3 +284,8 @@ if (class_exists('Jmd_add_alergeno_imagen')) {
 	new Jmd_add_alergeno_imagen;
 };
 
+
+/**
+ * Añadimos los alérgenos existentes a la taxonomía alergenos'
+ */
+include plugin_dir_path(__FILE__) . 'alergeno.terms.php';
