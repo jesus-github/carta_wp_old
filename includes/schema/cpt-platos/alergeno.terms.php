@@ -79,14 +79,17 @@
 
 function jmd_insertar_alergenos($taxonomy, $object_type, $args){
 	if ( 'alergeno' == $taxonomy ) {
-		$url = plugin_dir_url( __FILE__ ) . 'alergenos/altramuces.png';
-		$term = 'altramuces';
-		//$taxonomy = 'alergeno';
-		if (!term_exists($term,$taxonomy)){
-			$id = jmd_insert_term_and_metaimage($url,$term,$taxonomy);
-			error_log( print_r( $id, true)  );
+		$alergenos = ['altramuces', 'apio', 'cacahuetes'];
+		//$url = plugin_dir_url( __FILE__ ) . 'alergenos/altramuces.png';
+		foreach ($alergenos as $alergeno) {
+			$url = plugin_dir_url( __FILE__ ) . 'alergenos/'.$alergeno.'.png';
+			$term = $alergeno;
+			//$taxonomy = 'alergeno';
+			if (!term_exists($term,$taxonomy)){
+				$id = jmd_insert_term_and_metaimage($url,$term,$taxonomy);
+				//error_log( print_r( $id, true)  );
+			}
 		}
-
 	}
 }
 add_action( 'registered_taxonomy', 'jmd_insertar_alergenos',10,3);
