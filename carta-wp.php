@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Carta Wp
  * Plugin URI: https://triplejota.com
@@ -10,9 +9,7 @@
  * Text Domain: jmd_platos
  * License: GPL2
  */
-
 $version_plugin = '1.0';
-
 // Cargamos los estilos del front-end
 if (!function_exists('jmd_enqueue_styles_front')) {
 	function jmd_enqueue_styles_front() {
@@ -110,6 +107,5 @@ register_uninstall_hook(__FILE__, 'jmd_desinstall');
 
 /* Incluimos archivos */
 include plugin_dir_path(__FILE__) . 'includes/admin/functions.php';
-include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
+//include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';
-
