@@ -33,8 +33,10 @@ global $post;
 			</nav>
 		</div>
 		<!-- FIN de la maquetación del menú de selección -->
+
 		<!-- Comienzo de la maquetación del contenedor con todos los platos -->
-		<div class="row row-cols-1 row-cols-lg-2 mt-3 g-2 cwp-container">
+<!--		<div class="row row-cols-1 row-cols-lg-2 mt-3 g-2 cwp-container" data-masonry='{"percentPosition": true }'>-->
+        <div class="row cwp-container">
 			<!-- LOOP Comienzo de la maquetación de cada plato-->
 			<?php
 			$args = [
@@ -53,7 +55,7 @@ global $post;
 				while ($query->have_posts()) :
 					$query->the_post();
 					?>
-					<div class="col cwp-single-container" role="button" data-f="<?php
+					<div class="col-md-6 mt-2 cwp-single-container" role="button" data-f="<?php
 					// Cogemos todos los términos de la taxonomía 'seccion' del post en el bucle
 					$terms = get_the_terms( $post->ID, 'seccion' );
 					// Para cada término
@@ -61,20 +63,26 @@ global $post;
 						<div class="cwp-mask"></div>
 						<div class="card shadow-sm p-0">
 							<div class="row g-0">
+                                <!-- Si no hay imagen no mostramos su contenedor-->
+					            <?php if (has_post_thumbnail( $post->ID ) ): ?>
 								<div class="col-4">
 									<img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid rounded-start cwp-fill cwp-main-image" alt="...">
 								</div>
 								<div class="col-8">
+					            <?php else: ?>
+                                <div class="col-12">
+                                <?php endif; ?>
 									<div class="card-body">
 										<h3 class="card-title h5"><?php the_title();?></h3>
 										<p class="card-text text-secondary m-1 cwp-description show-read-more"><?php echo get_the_content();?></p>
 										<h6 class="card-text cwp-price"><?php echo (get_post_meta(get_the_ID(),'plato_precio', true)); ?> €</h6>
-										<ul class="list-inline m-0 cwp-alergenos">
+
 											<?php
 											// Cogemos todos los términos de la taxonomía 'alergeno' del post en el bucle
 											$terms = get_the_terms($post->ID, 'alergeno');
                                             // Si hay alérgenos...
                                             if ($terms!=false){
+	                                            echo '<ul class="list-inline m-0 cwp-alergenos">';
 	                                            // Para cada término
 	                                            foreach ($terms as $term) {
 		                                            // De cada término cogemos el id del meta key 'alergeno-imagen'
@@ -83,9 +91,9 @@ global $post;
 		                                            $iconImage = wp_get_attachment_image_src($termId,'large');
 		                                            echo '<li class="list-inline-item"><img class="cwp-alerg-icon" src="'.$iconImage[0].'" alt="' . $term->name . '"></li>';
 	                                            }
+                                                echo "</ul>";
                                             }
 											?>
-										</ul>
 									</div>
 								</div>
 							</div>

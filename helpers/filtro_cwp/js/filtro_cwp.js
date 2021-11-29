@@ -80,6 +80,12 @@ if (typeof  jQuery == 'undefined') {
     TJ_CartaWp.prototype.filtro = function (options) {
         // Al hacer click sobre algún botón contenido en options.filter (hemos definido ya su valor por defecto del contenedor de los botones)
         $(document).on('click', options.filter, function (){
+            // Reiniciamos masonry después del filtrado
+            setTimeout(function() {
+                $('.cwp-container').masonry({
+                    itemSelector: '.cwp-single-container'
+                });
+            }, 350);
             // Variable para almacenar el elemento sobre el que hacemos click
             var $this = $(this);
             // Variable para almacenar el valos del atributo data-filter del botón
@@ -102,15 +108,15 @@ if (typeof  jQuery == 'undefined') {
                     // Ejecutamos la acción pasados unos milisegundos
                     //console.log('antes');
                     setTimeout(function (){
-                        console.log(filtro);
                         // Mostramos  solo los items que tengan como valor del atributo data-f el valor de filtro (data-filter del botón en este caso)
                         // Utilizamos *= para indicar que data-f tiene que contener el valor de filtro, por si hay más de un filtro aplicado
                         $('[data-f *= "'+filtro+'"]').fadeIn(300);
                     },300);
                 }
             }
-
         });
+
+
     }
 
     // Método para hacer Zoom al pinchar sobre un plato
@@ -128,7 +134,8 @@ if (typeof  jQuery == 'undefined') {
             var $contenedor_pequeno = $(this);
             // Variables para almacenar los datos del contenedor pequeño:
             // Variable con la url de la imagen principal.
-            var src = $contenedor_pequeno.find('.cwp-main-image').attr('src');
+            console.log($contenedor_pequeno.find('.cwp-main-image').attr('src'));
+            var $src = $contenedor_pequeno.find('.cwp-main-image').attr('src');
             // Título
             var $titulo = $contenedor_pequeno.find('.card-title').text();
             // Descripcion. Vamos a distinguir si el contenedor tiene read-more o no para no mostrar lo que haya
@@ -148,8 +155,16 @@ if (typeof  jQuery == 'undefined') {
             // Parámetro para mostrar el zoom y el overdark
             $contenedor_zoom.fadeIn();
             $overdark.fadeIn();
+
             // Pasamos los valores del contenedor chico al grande
-            $contenedor_zoom.children('.cwp-main-image').attr('src', src);
+            // Controlamos que si no hay imagen no se muestre el contenedor de la imagen
+            if (typeof $src != 'undefined'){
+                $('.card-img-top').removeClass('d-none');
+                $contenedor_zoom.children('.cwp-main-image').attr('src', $src);
+            } else if (typeof $src === 'undefined'){
+                $contenedor_zoom.children('.cwp-main-image').attr('src', '');
+                $('.card-img-top').addClass('d-none');
+            }
             $contenedor_zoom.find('.card-title').text($titulo);
             $contenedor_zoom.find('.cwp-description').text($descripcion);
             $contenedor_zoom.find('.cwp-price').text($precio);

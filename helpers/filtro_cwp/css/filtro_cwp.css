@@ -72,3 +72,15 @@ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
 .cwp-fondo-zoom {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .cwp-zoom {
+        width: 85vw;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cwp-zoom {
+        height: 85vh;
+        width: auto;
+    }
+}
