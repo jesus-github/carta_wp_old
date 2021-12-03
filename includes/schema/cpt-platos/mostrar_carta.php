@@ -1,6 +1,19 @@
 <?php
-// Shortcode para mostrar todos los platos
+
 global $post;
+
+// Seteamos la query de esta página para que devuelva 999 resultados en el hook "antes de coger los posts"
+function jmd_platos_devueltos( $query ) {
+    // Capturamos el ID de la página actual
+    $page_id = get_the_ID();
+    // Si estamos en la página actual seteamos la query para que devuelva 999 posts
+	if (is_page($page_id)) {
+		$query->set( 'posts_per_page', 999 );
+		return;
+	}
+}
+add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
+
 ?>
 	<!--COMIENZO de la maquetación del contenedor de la carta (categorías + platos)-->
 	<div class="container">
@@ -15,7 +28,7 @@ global $post;
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<!-- Añadimos la clase cwp-categorias-->
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0 cwp-categorias">
-							<li data-filter="todo" class="nav-item p-2 m-2 ">Todo</li>
+							<li data-filter="todo" class="nav-item p-2 m-2 cwp-categoria-activa">Todo</li>
 							<?php
 							$taxonomy = 'seccion';
 							$taxonomy_terms = get_terms($taxonomy);

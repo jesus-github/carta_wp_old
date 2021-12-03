@@ -80,7 +80,6 @@ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .cwp-zoom {
-        height: 85vh;
-        width: auto;
+
     }
 }

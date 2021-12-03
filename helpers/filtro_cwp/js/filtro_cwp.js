@@ -83,7 +83,8 @@ if (typeof  jQuery == 'undefined') {
             // Reiniciamos masonry después del filtrado
             setTimeout(function() {
                 $('.cwp-container').masonry({
-                    itemSelector: '.cwp-single-container'
+                    itemSelector: '.cwp-single-container',
+                    percentPosition: true
                 });
             }, 350);
             // Variable para almacenar el elemento sobre el que hacemos click

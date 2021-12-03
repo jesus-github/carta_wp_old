@@ -9,14 +9,15 @@
  * Text Domain: jmd_platos
  * License: GPL2
  */
-$version_plugin = '1.0';
+
 // Cargamos los estilos del front-end
 if (!function_exists('jmd_enqueue_styles_front')) {
 	function jmd_enqueue_styles_front() {
+		$version_plugin = '1.0';
 		// hoja de estilos front
 		wp_enqueue_style(
 			'public_styles',
-			plugins_url('public/css/carta_wp-public.min.css',__FILE__),
+			plugins_url('includes/public/css/carta_wp-public.min.css',__FILE__),
 			array(),
 			$version_plugin,
 			'all'
@@ -68,7 +69,7 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 		// scripts del front
 		wp_enqueue_script(
 			'public_scripts',
-			plugins_url('public/js/carta_wp-public.js',__FILE__),
+			plugins_url('includes/public/js/carta_wp-public.min.js',__FILE__),
 			array(),
 			$version_plugin,
 			true
@@ -120,3 +121,5 @@ register_uninstall_hook(__FILE__, 'jmd_desinstall');
 include plugin_dir_path(__FILE__) . 'includes/admin/functions.php';
 //include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';
+
+

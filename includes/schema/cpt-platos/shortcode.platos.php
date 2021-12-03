@@ -11,3 +11,4 @@ function jmd_init_shortcodes(){
 	add_shortcode('wp-mostrar-carta', 'jmd_create_shortcode_platos_post_type');
 }
 add_action('init', 'jmd_init_shortcodes');
+

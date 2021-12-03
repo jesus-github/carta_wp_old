@@ -71,3 +71,12 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 	add_action( 'init', 'jmd_cpt_platos', 0 );
 
 }
+
+//function hwl_home_pagesize( $query ) {
+//	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'platos' ) ) {
+//		// Display 50 posts for a custom post type called 'movie'
+//		$query->set( 'posts_per_page', 50 );
+//		return;
+//	}
+//}
+//add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
