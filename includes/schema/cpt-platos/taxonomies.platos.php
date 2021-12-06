@@ -31,6 +31,12 @@ if ( ! function_exists( 'jmd_add_taxonomy_seccion' ) ) {
             'items_list'                 => __( 'Lista de secciones', 'jmd_platos' ),
             'items_list_navigation'      => __( 'Navegación por la lista de secciones', 'jmd_platos' ),
         );
+	    $capabilities = array(
+		    'manage_terms'               => 'manage_seccion',
+		    'edit_terms'                 => 'edit_seccion',
+		    'delete_terms'               => 'delete_seccion',
+		    'assign_terms'               => 'assign_seccion',
+	    );
         $args = array(
             'labels'                     => $labels,
             'hierarchical'               => false,
@@ -39,6 +45,7 @@ if ( ! function_exists( 'jmd_add_taxonomy_seccion' ) ) {
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
+            'capabilities'               => $capabilities,
             "meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
         );
         register_taxonomy( 'seccion', 'platos', $args );
@@ -78,6 +85,12 @@ if ( ! function_exists( 'jmd_add_taxonomy_alergeno' ) ) {
 			'items_list'                 => __( 'Lista de alérgenos', 'jmd_platos' ),
 			'items_list_navigation'      => __( 'Navegación por la lista de alérgenos', 'jmd_platos' ),
 		);
+		$capabilities = array(
+			'manage_terms'               => 'manage_alergeno',
+			'edit_terms'                 => 'edit_alergeno',
+			'delete_terms'               => 'delete_alergeno',
+			'assign_terms'               => 'assign_alergeno',
+		);
 		$args = array(
 			'labels'                     => $labels,
 			'hierarchical'               => false,
@@ -86,6 +99,7 @@ if ( ! function_exists( 'jmd_add_taxonomy_alergeno' ) ) {
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
+			'capabilities'               => $capabilities,
 			"meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
 		);
 		register_taxonomy( 'alergeno', 'platos', $args );

@@ -83,8 +83,7 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 if (!function_exists('jmd_install')) {
 	function jmd_install() {
 		// Acciones a ejecutar cuando instalamos el plugin
-		//require_once 'Activador.php';
-
+		require_once plugin_dir_path(__FILE__). 'includes/admin/add.rol.carta.php';
 	}
 }
 
@@ -105,7 +104,7 @@ if (!function_exists('jmd_deactivation')) {
 if (!function_exists('jmd_desinstall')) {
 	function jmd_desinstall() {
 		//Acciones a realizar antes de borrar todos los datos que se encuentran en la cartepa del plugin
-
+		require_once plugin_dir_path(__FILE__). 'includes/admin/remove.add.rol.carta.php';
 
 	}
 }
@@ -122,4 +121,6 @@ include plugin_dir_path(__FILE__) . 'includes/admin/functions.php';
 //include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';
 
+//remove_role( 'carta' );
+//error_log( print_r( $wp_user_roles, true)  );
 

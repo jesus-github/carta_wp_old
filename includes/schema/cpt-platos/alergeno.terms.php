@@ -59,7 +59,7 @@
 
 		// Nos llega a la función
 
-		/*  3.- Añadimos un metadato (alergeno-imagen) a altramuces
+		/*  Añadimos un metadato (alergeno-imagen) a altramuces
 	    *      add_term_meta( int $term_id, string $meta_key, mixed $meta_value, bool $unique = false )
 	    *      - $term = get_term_by('slug','altramuces', 'alergeno'); $term->term_id
 	    *      - meta_key (string) – Custom field key. 'alergeno-imagen'

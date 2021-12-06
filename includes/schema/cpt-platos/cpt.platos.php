@@ -42,12 +42,21 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 			'items_list_navigation' => __( 'Lista de navegación de platos', 'jmd_platos' ),
 			'filter_items_list'     => __( 'Lista filtrada de platos', 'jmd_platos' ),
 		);
+		$capabilities = array(
+			'edit_post'             => 'edit_plato',
+			'read_post'             => 'read_plato',
+			'delete_post'           => 'delete_plato',
+			'edit_posts'            => 'edit_platos',
+			'edit_others_posts'     => 'edit_others_platos',
+			'publish_posts'         => 'publish_platos',
+			'read_private_posts'    => 'read_private_platos',
+		);
 		$args = array(
 			'label'                 => __( 'plato', 'jmd_platos' ),
 			'description'           => __( 'Platos que van a componer la carta', 'jmd_platos' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'thumbnail'),
-			'taxonomies'            => array( 'seccion', 'alergeno' ),
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+			'taxonomies'            => array( 'seccion', ' alergeno' ),
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
@@ -60,7 +69,7 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 			'has_archive'           => true,
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
-			'capability_type'       => 'post',
+			'capabilities'          => $capabilities,
 		);
 		register_post_type( 'platos', $args );
 		// Actualiza los enlaces permanentes
@@ -71,12 +80,3 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 	add_action( 'init', 'jmd_cpt_platos', 0 );
 
 }
-
-//function hwl_home_pagesize( $query ) {
-//	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'platos' ) ) {
-//		// Display 50 posts for a custom post type called 'movie'
-//		$query->set( 'posts_per_page', 50 );
-//		return;
-//	}
-//}
-//add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
