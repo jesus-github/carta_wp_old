@@ -21,6 +21,7 @@ ul.cwp-categorias li {
 ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
     background-color: #000000;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .cwp-item {
@@ -76,6 +77,9 @@ ul.cwp-categorias li.cwp-categoria-activa, ul.cwp-categorias li:hover {
 @media (max-width: 768px) {
     .cwp-zoom {
         width: 85vw;
+    }
+    ul.cwp-categorias {
+        margin-left: 0;
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {

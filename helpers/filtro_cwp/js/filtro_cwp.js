@@ -86,7 +86,10 @@ if (typeof  jQuery == 'undefined') {
                     itemSelector: '.cwp-single-container',
                     percentPosition: true
                 });
+                // Una vez seleccionada la categoría cerramos el menú hamburguesa
+                $('.navbar-collapse').removeClass('show');
             }, 350);
+
             // Variable para almacenar el elemento sobre el que hacemos click
             var $this = $(this);
             // Variable para almacenar el valos del atributo data-filter del botón

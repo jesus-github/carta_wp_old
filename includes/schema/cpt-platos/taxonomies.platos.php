@@ -45,6 +45,7 @@ if ( ! function_exists( 'jmd_add_taxonomy_seccion' ) ) {
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
+            'show_in_quick_edit'         => false,
             'capabilities'               => $capabilities,
             "meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
         );
@@ -98,9 +99,10 @@ if ( ! function_exists( 'jmd_add_taxonomy_alergeno' ) ) {
 			'show_ui'                    => true,
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
+			'show_in_quick_edit'         => false,
+			"meta_box_cb"                => "post_categories_meta_box", // muestra checkboxes para marcar las categorías
 			'show_tagcloud'              => true,
 			'capabilities'               => $capabilities,
-			"meta_box_cb"                => "post_categories_meta_box" // muestra checkboxes para marcar las categorías
 		);
 		register_taxonomy( 'alergeno', 'platos', $args );
 

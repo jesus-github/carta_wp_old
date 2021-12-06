@@ -124,3 +124,4 @@ include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';
 //remove_role( 'carta' );
 //error_log( print_r( $wp_user_roles, true)  );
 
+add_theme_support('post-thumbnails');

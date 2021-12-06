@@ -55,7 +55,7 @@ if ( ! function_exists('jmd_cpt_platos') ) {
 			'label'                 => __( 'plato', 'jmd_platos' ),
 			'description'           => __( 'Platos que van a componer la carta', 'jmd_platos' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+			'supports'              => array( 'title', 'editor', 'thumbnail'),
 			'taxonomies'            => array( 'seccion', ' alergeno' ),
 			'hierarchical'          => false,
 			'public'                => true,
