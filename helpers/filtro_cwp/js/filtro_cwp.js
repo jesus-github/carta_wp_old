@@ -47,8 +47,7 @@ if (typeof  jQuery == 'undefined') {
         this.filtro(this.options);
 
         // Añadimos el html de la máscara y el zoom al final de body (las hemos declarado como propiedades al crear el objeto TJ_CartaWp)
-        $('body').prepend(this.zoomfull);
-        $('body').prepend(this.overdark);
+        $('body').prepend(this.zoomfull).prepend(this.overdark);
 
         // Inicializamos el métido para hacer zoom
         this.zoom();

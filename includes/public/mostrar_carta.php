@@ -55,19 +55,11 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
         <?php
         // Hacemos una consulta por cada término de la categoría sección para tener el resultado agrupado por términos
         //error_log( print_r( $taxonomy_terms, true)  );
-        foreach ( $taxonomy_terms as $taxonomy_term ){
+
         $args   = [
 	        'post_type'      => 'platos',
 	        'post_per_page'  => - 1,
 	        'publish_status' => 'published',
-	        'tax_query' => array(
-		        array(
-			        'taxonomy' => 'seccion',
-			        'field' => 'slug',
-			        'terms' => array( $taxonomy_term->slug ),
-			        'operator' => 'IN'
-		        )
-	        )
         ];
         // Consulta a la BD
         $query  = new WP_Query( $args );
@@ -76,6 +68,7 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
 
         while ( $query->have_posts() ) :
         $query->the_post(); // Vamos recuperando los post devueltos por la query
+
 
         ?>
 
@@ -137,10 +130,9 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
 		        endif;
 
 		        //return $result;
-		        }
+
                 ?>
             <!--FIN de la maquetación del contenedor de todos los platos -->
         </div>
         <!--FIN de la maquetación del contenedor de la carta (categorías + platos)-->
-
     </div>

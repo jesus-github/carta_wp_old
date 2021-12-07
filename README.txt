@@ -1,61 +1,52 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: jesusmartinezdiaz
 Donate link: https://triplejota.com
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tags: restaurante, carta, menú, bar, cafetería, qr, carta digital, carta qr
+Requires at least: 5.0
+Tested up to: 5.8
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Con Carta_WP podrás incluir la carta de tu bar, cafetería o restaurante en cualquier página de tu web mediante el
+shortcode [wp-mostrar-carta]. Permite el filtrado por secciones e incluye los iconos de alérgenos.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Al instalar carta_WP, nos aparece un nuevo tipo de contenido llamado "plato". Podemos añadir tantos platos como queramos
+y cada uno de ellos cuenta con:
+    - Título
+    - Descripción
+    - Precio
+    - Imagen destacada
+    - Sección: Podrás crear todas las que tu necesites: entrantes, tapas, raciones, sugerencias...
+    - Alérgenos: incluye los 14 alérgenos de declaración obligatoria con sus iconos. Además podrás añadir todos los que
+    necesites.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Una vez introducidos los platos de la carta podremos mostrarla en cualquier página de nuestro wordpress utilizando el
+shortcode [wp-mostrar-carta].
 
-A few notes about the sections above:
+El cliente puede ver y filtrar la carta por secciones. Con una visión optimizada para dispositivos móviles.
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+Además podremos crear un usuario de wordpress que solo tenga permisos para modificar todo lo relativo a la carta. Sin
+riesgos de que edite ninguna otra cosa del sitio web. A este usuario le tenemos que asignar el perfil 'Editor de carta'
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+Instalación manual a través de FTP:
+    - Descomprime el archivo carta_wp.zip y súbelo al directorio '/wp-content/plugins/'.
+    - Accede al panel de administración de Wordpress y en el menú lateral selecciona 'plugins'. Nos aparecerán todos los
+    plugins instalados. Buscamos carta WP y pulsamos 'activar'.
 
-e.g.
-
-1. Upload `carta_wp.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+Instalación automática desde Wordpress:
+    - En el menú de Wordpress accede a plugins > añadir nuevo.
+    - Pulsa el botón subir plugin y localiza en tu ordenador el archivo carta_wp.zip
+    - Selecciona 'instalar ahora' y posteriormente 'activar plugin'
 
 == Frequently Asked Questions ==
 
 = A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
 
 == Screenshots ==
 
@@ -71,9 +62,6 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 * A change since the previous version.
 * Another change.
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
 == Upgrade Notice ==
 
 = 1.0 =
@@ -82,25 +70,16 @@ Upgrade notices describe the reason a user should upgrade.  No more than 300 cha
 = 0.5 =
 This version fixes a security related bug.  Upgrade immediately.
 
-== Arbitrary section ==
+== Características ==
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+* Una carta digital clara y funcional para tus clientes y de fácil manejo para ti y tus empleados.
+* Introduce los platos y muestrala donde quieras usando el shortcode [wp-mostrar-carta].
+* Mantén tu carta organizada para que no interfiera con el resto de páginas.
+* Permite crear un usuario que solo pueda acceder a crear y editar los datos relativos a la carta.
+* Crea tantas secciones como necesites: sugerencias, bebidas, tapas, carnes, postres...
+* Incluye los 14 alérgenos de declaración obligatoria con sus iconos. Además podrás añadir todos los que necesites.
+* Puedes añadir a cada plato: título, descripción, precio, imagen, secciones y alérgenos.
 
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
 
 Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
 Titles are optional, naturally.
