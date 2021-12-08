@@ -19,10 +19,10 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
 	<div class="container">
 		<!-- COMIENZO de la maquetación del menú de selección -->
 		<div class="row">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="#">Secciones</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand fw-bold" href="#">Secciones</a>
+					<button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -69,10 +69,8 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
         while ( $query->have_posts() ) :
         $query->the_post(); // Vamos recuperando los post devueltos por la query
 
-
         ?>
-
-            <div class="col-md-6 mt-2 cwp-single-container" role="button" data-f="<?php
+            <div class="col-md-6 mt-2 cwp-single-container"  role="button" data-f="<?php
 	        // Cogemos todos los términos de la taxonomía 'seccion' del post en el bucle
 	        $terms = get_the_terms( $post->ID, 'seccion' );
 	        // Para cada término
@@ -80,7 +78,7 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
 		        echo strtolower( "$term->name " );
 	        } ?>">
                 <div class="cwp-mask"></div>
-                <div class="card shadow-sm p-0">
+                <div class="card shadow-sm h-100 p-0">
                     <div class="row g-0">
                         <!-- Si no hay imagen no mostramos su contenedor-->
 				        <?php if ( has_post_thumbnail( $post->ID ) ): ?>

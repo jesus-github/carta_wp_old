@@ -34,7 +34,7 @@ if (typeof  jQuery == 'undefined') {
     TJ_CartaWp.Defaults = {
         filter : '.cwp-categorias li', // selector de los filtros
         item : '.cwp-item', // selector  los item a filtrar (clase que tendrá el contenedor de cada plato)
-        animation : 'scale',
+        animation : 'none',
         callback : null
     }
 
@@ -79,15 +79,12 @@ if (typeof  jQuery == 'undefined') {
     TJ_CartaWp.prototype.filtro = function (options) {
         // Al hacer click sobre algún botón contenido en options.filter (hemos definido ya su valor por defecto del contenedor de los botones)
         $(document).on('click', options.filter, function (){
-            // Reiniciamos masonry después del filtrado
+
             setTimeout(function() {
-                $('.cwp-container').masonry({
-                    itemSelector: '.cwp-single-container',
-                    percentPosition: true
-                });
                 // Una vez seleccionada la categoría cerramos el menú hamburguesa
                 $('.navbar-collapse').removeClass('show');
-            }, 350);
+                $('.navbar-brand').html($('.cwp-categoria-activa').text());
+            }, 10);
 
             // Variable para almacenar el elemento sobre el que hacemos click
             var $this = $(this);
@@ -97,29 +94,24 @@ if (typeof  jQuery == 'undefined') {
             var $item   = $(options.item);
 
             // Evaluamos la variable filtro para ver el valor del atributo data-filter del botón
-            if (filtro == 'todo') {
+            if (filtro === 'todo') {
                 // Le añadimos la clase cwp-categoria-activa y a todos los hermanos le quitamos la clase cwp-categoria-activa
                 $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
                 // Muestra todas la imágenes
-                $item.fadeIn(600);
+                $item.show();
             } else {
                 // Si el elemento que pulsamos no tiene la clase cwp-categoria-activa vamos a agrgársela y quitársela a los hermanos
                 if (!$this.hasClass('cwp-categoria-activa')) {
                     $this.addClass('cwp-categoria-activa').siblings().removeClass('cwp-categoria-activa');
-                    // Ocultamos todos los items
-                    $item.fadeOut(300);
-                    // Ejecutamos la acción pasados unos milisegundos
-                    //console.log('antes');
-                    setTimeout(function (){
+                    // Ocultamos todos los items y una vez ocultados ejecutamos la función
+                    $item.hide(0, function (){
                         // Mostramos  solo los items que tengan como valor del atributo data-f el valor de filtro (data-filter del botón en este caso)
                         // Utilizamos *= para indicar que data-f tiene que contener el valor de filtro, por si hay más de un filtro aplicado
-                        $('[data-f *= "'+filtro+'"]').fadeIn(300);
-                    },300);
+                        $('[data-f *= "'+filtro+'"]').show();
+                    });
                 }
             }
         });
-
-
     }
 
     // Método para hacer Zoom al pinchar sobre un plato
@@ -132,12 +124,10 @@ if (typeof  jQuery == 'undefined') {
         var $imagen_pricipal = $('.cwp-main-image');
         // Evento para cuando hagamos click sobre el contenedor cwp-single-container
         $(document).on('click','.cwp-single-container', function (){
-            //console.log($alergenos);
             // Almacenamos en una variable el elemento sobre el cual estamos haciendo click
             var $contenedor_pequeno = $(this);
             // Variables para almacenar los datos del contenedor pequeño:
             // Variable con la url de la imagen principal.
-            console.log($contenedor_pequeno.find('.cwp-main-image').attr('src'));
             var $src = $contenedor_pequeno.find('.cwp-main-image').attr('src');
             // Título
             var $titulo = $contenedor_pequeno.find('.card-title').text();
@@ -234,12 +224,6 @@ if (typeof  jQuery == 'undefined') {
     $.fn.filtro_cwp.noConflict = function () {
         $.fn.filtro_cwp = old;
     }
-
-    // Iniciamos el plugin de filtrado, si no le pasamos valores cogerá los por defecto.
-    // Indicamos el contedor donde se encuentra el contenido a filtrar
-    // $('.cwp-container').filtro_cwp({}, function (){
-    //     console.log('todo correcto')
-    // });
 
 })(jQuery);
 

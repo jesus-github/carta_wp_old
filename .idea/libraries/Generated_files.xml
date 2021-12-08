@@ -3,6 +3,8 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/helpers/filtro_cwp/js/filtro_cwp.min.js" />
+        <item url="file://$PROJECT_DIR$/helpers/masonry/_masonry.pkgd.min.min.js" />
+        <item url="file://$PROJECT_DIR$/helpers/masonry/masonry.pkgd.min.min.js" />
         <item url="file://$PROJECT_DIR$/includes/public/js/carta_wp-public.min.js" />
         <item url="file://$PROJECT_DIR$/../duplicate-post/js/dist/duplicate-post-edit-420.min.js" />
         <item url="file://$PROJECT_DIR$/../duplicate-post/js/dist/duplicate-post-elementor-420.min.js" />
@@ -35,6 +37,8 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/helpers/filtro_cwp/js/filtro_cwp.min.js" />
+      <root url="file://$PROJECT_DIR$/helpers/masonry/_masonry.pkgd.min.min.js" />
+      <root url="file://$PROJECT_DIR$/helpers/masonry/masonry.pkgd.min.min.js" />
       <root url="file://$PROJECT_DIR$/includes/public/js/carta_wp-public.min.js" />
       <root url="file://$PROJECT_DIR$/../duplicate-post/js/dist/duplicate-post-edit-420.min.js" />
       <root url="file://$PROJECT_DIR$/../duplicate-post/js/dist/duplicate-post-elementor-420.min.js" />
