@@ -8,7 +8,7 @@ if (typeof  jQuery == 'undefined') {
     'use strict';
     /********** Funcionalidad de filtrado *********/
 
-        // Creamos un objeto (nombramos la variable empezando con mayúsculas) cuyo valor va a ser igual a una función
+    // Creamos un objeto (nombramos la variable empezando con mayúsculas)
     var TJ_CartaWp = function (element, options, callback) {
             this.element    = null;
             this.options    = null;
@@ -175,8 +175,6 @@ if (typeof  jQuery == 'undefined') {
             $contenedor_zoom.find('ul.cwp-alergenos').html('');
 
         })
-
-
     }
 
     // Añadimos leer más para no mostrar toda la descripción
@@ -201,12 +199,6 @@ if (typeof  jQuery == 'undefined') {
         });
     });
 
-
-    // Extendemos el objeto jQuery creando la funciionalidad
-    /* $(element).filtro_cwp({}, function(){
-        ...
-        })
-    */
     var Plugin = function (options, callback) {
         return this.each(function () {
             options = typeof options == 'object' && options;

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Carta Wp
  * Plugin URI: https://triplejota.com
- * Description: Añade una carta con filtrado a la página de tu restaurante o cafetería.
+ * Description: Añade una carta digital con filtrado a la página de tu restaurante mediante el shortcode [wp-mostrar-carta].
  * Version: 1.0
  * Author: Jesús Martínez
  * Author URI: https://triplejota.com
@@ -111,8 +111,3 @@ register_uninstall_hook(__FILE__, 'jmd_desinstall');
 include plugin_dir_path(__FILE__) . 'includes/admin/functions.php';
 //include plugin_dir_path(__FILE__) . 'includes/public/functions.php';
 include plugin_dir_path(__FILE__) . 'includes/schema/functions.php';
-
-//remove_role( 'carta' );
-//error_log( print_r( $wp_user_roles, true)  );
-
-add_theme_support('post-thumbnails');
