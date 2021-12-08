@@ -48,20 +48,11 @@ if (!function_exists('jmd_enqueue_styles_front')) {
 			true
 		);
 
-		// scripts del plugin de filtrar jQuery
+		// scripts del plugin de filtrar
 		wp_enqueue_script(
 			'filtro_cwp_public_scripts',
 			plugins_url('helpers/filtro_cwp/js/filtro_cwp.min.js',__FILE__),
 			array( 'jquery' ), // Encolamos después de cargar jquery
-			$version_plugin,
-			true
-		);
-
-		// scripts de masonry
-		wp_enqueue_script(
-			'masonry_scripts',
-			plugins_url('helpers/masonry/masonry.pkgd.min.js',__FILE__),
-			array(),
 			$version_plugin,
 			true
 		);

@@ -20,7 +20,7 @@ add_action( 'pre_get_posts', 'jmd_platos_devueltos', 1 );
 		<!-- COMIENZO de la maquetación del menú de selección -->
 		<div class="row">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-				<div class="container-fluid">
+				<div class="container-fluid overflow-auto">
 					<a class="navbar-brand fw-bold" href="#">Secciones</a>
 					<button class="navbar-toggler border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
